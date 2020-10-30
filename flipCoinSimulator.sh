@@ -18,9 +18,23 @@ do
  if [ $coinFlip -eq 0 ]
  then
   count=$((count+1))
+  if [ $count -eq 21 ]
+   then
+    break
+  fi
  else
   count1=$((count1+1))
+  if [ $count1 -eq 21 ]
+   then
+    break
+  fi
  fi
 done
 echo "Head has come $count times"
 echo "Tail has come $count1 times"
+if [ $count -gt $count1 ]
+ then
+  echo "Heads wins"
+ else
+  echo "Tails wins"
+fi

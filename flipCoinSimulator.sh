@@ -35,6 +35,17 @@ echo "Tail has come $count1 times"
 if [ $count -gt $count1 ]
  then
   echo "Heads wins"
- else
+ elif [ $count1 -gt $count ]
+ then
   echo "Tails wins"
+ else
+  echo "It's a tie"
 fi
+while(true)
+ do
+  if [ $(($count-$count1)) -eq 2 -o $(($count1-$count)) -eq 2 ]
+   then
+    echo "MINIMUM DIFFERENCE 2 REACHED AS HEAD=$count and TAIL=$count1"
+     break
+  fi
+done
